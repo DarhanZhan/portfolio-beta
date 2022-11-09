@@ -1,0 +1,250 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: aliceblue;
+    overflow-x: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
+
+h1,
+h2,
+h3,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+
+    position: relative;
+    margin: 0 auto;
+}
+
+.header {
+    background: url(../img/mountain.jpg) no-repeat center /cover, #555555;
+    ;
+    background-blend-mode: hard-light;
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    background-size: cover;
+}
+
+.logo {
+    max-width: 75px;
+    width: 100%;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #18272F;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.header-nav {
+    position: relative;
+    display: flex;
+    padding-top: 20px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.cloud {
+    max-width: 1000px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+/* Header Content */
+
+.header-content {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    padding-top: 20vw;
+    padding-left: 5vw;
+    z-index: 100;
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.btn {
+    max-width: 100px;
+    width: 100%;
+    height: 25px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 20px;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 50px;
+    margin-top: 40px;
+
+}
+.btn:hover {
+    cursor: pointer;
+}
+
+
+/* ANIMATION CLOUD */
+@-webkit-keyframes animCloud {
+    from {
+        -webkit-transform: translateX(100%)
+    }
+
+    to {
+        -webkit-transform: translateX(-100%)
+    }
+}
+
+@-moz-keyframes animCloud {
+    from {
+        -moz-transform: translateX(100%)
+    }
+
+    to {
+        -moz-transform: translateX(-100%)
+    }
+}
+
+@keyframes animCloud {
+    from {
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+        transform: translateX(100%)
+    }
+
+    to {
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+        transform: translateX(-100%)
+    }
+}
+
+.cloud1 {
+    -webkit-animation: animCloud 20s infinite linear;
+    -moz-animation: animCloud 20s infinite linear;
+    animation: animCloud 20s infinite linear
+}
+
+.cloud2 {
+    -webkit-animation: animCloud 40s infinite linear;
+    -moz-animation: animCloud 40s infinite linear;
+    animation: animCloud 40s infinite linear
+}
+
+.cloud3 {
+    -webkit-animation: animCloud 60s infinite linear;
+    -moz-animation: animCloud 60s infinite linear;
+    animation: animCloud 60s infinite linear
+}
+
+.cloud4 {
+    -webkit-animation: animCloud 80s infinite linear;
+    -moz-animation: animCloud 80s infinite linear;
+    animation: animCloud 80s infinite linear
+}
+
+
+.dropbtn {
+    background: url(../img/menu_FILL0_wght400_GRAD0_opsz48.svg) no-repeat;
+    background-position: right;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .header-nav ul {
+        display: none;
+    }
+
+
+    .header {
+        padding-bottom: 100%;
+    }
+
+    h1 {
+        font-size: 7vw;
+
+    }
+
+    h2 {
+        font-size: 5vw;
+    }
+}
+
+
+/* TYPING TEXT */
+h1 {
+    width: 26ch;
+    animation: typing 4s steps(26), blink .7s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
